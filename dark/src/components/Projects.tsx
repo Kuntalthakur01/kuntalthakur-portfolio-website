@@ -47,7 +47,7 @@ const projectCategories = [
       {
         title: "MedXAI: A Retrieval-Augmented and Self-Verifying Framework for Knowledge-Guided Medical Image Analysis",
         description: "Retrieval-augmented, self-verifying pipeline that grounds medical image analysis in external knowledge for more reliable and interpretable outputs.",
-        image: "/medxai.png",
+        image: "/kuntalthakur-portfolio-website/medxai.png",
         imageFit: "contain",
         tags: ["Healthcare AI", "RAG", "Self-Verification", "Medical Imaging"],
         github: "https://arxiv.org/abs/2512.10098",
@@ -159,7 +159,7 @@ const projectCategories = [
 const ProjectCard = ({ project, index }: { project: any, index: number }) => {
   const handleFallback = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.onerror = null;
-    e.currentTarget.src = '/profile.jpeg';
+    e.currentTarget.src = '/kuntalthakur-portfolio-website/profile.jpeg';
   };
   const useContainFit = project.imageFit === 'contain';
 
