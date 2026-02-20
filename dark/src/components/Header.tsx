@@ -15,7 +15,7 @@ const Header = () => {
           <div className="w-40 h-40 mx-auto rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 p-1">
             <div className="w-full h-full rounded-lg overflow-hidden bg-slate-900">
               <img
-                src="/profile.jpeg"
+                src="/kuntalthakur-portfolio-website/profile.jpeg"
                 alt="Kuntal Thakur Profile"
                 width={160}
                 height={160}
