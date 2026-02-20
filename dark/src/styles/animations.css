@@ -1,0 +1,352 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes rotate3D {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+@keyframes tilt {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(10deg);
+  }
+  75% {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0px) rotateX(0deg);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    transform: translateY(-15px) rotateX(5deg);
+    box-shadow: 0 25px 40px rgba(168, 85, 247, 0.4);
+  }
+  100% {
+    transform: translateY(0px) rotateX(0deg);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
+  }
+}
+
+@keyframes hologram {
+  0% {
+    opacity: 0.8;
+    transform: perspective(1000px) rotateY(0deg);
+    filter: hue-rotate(0deg);
+  }
+  33% {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(120deg);
+    filter: hue-rotate(120deg);
+  }
+  66% {
+    opacity: 0.9;
+    transform: perspective(1000px) rotateY(240deg);
+    filter: hue-rotate(240deg);
+  }
+  100% {
+    opacity: 0.8;
+    transform: perspective(1000px) rotateY(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes matrix {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate3D {
+  animation: rotate3D 15s linear infinite;
+}
+
+.animate-tilt {
+  animation: tilt 8s ease-in-out infinite;
+}
+
+.animate-levitate {
+  animation: levitate 4s ease-in-out infinite;
+}
+
+.animate-hologram {
+  animation: hologram 10s linear infinite;
+}
+
+.animate-matrix {
+  animation: matrix 20s linear infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.5s ease-out forwards;
+}
+
+.stagger-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.stagger-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.stagger-delay-3 {
+  animation-delay: 0.6s;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 3D Card Effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(20px);
+}
+
+.card-3d::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card-3d:hover::before {
+  opacity: 1;
+}
+
+/* Holographic Effects */
+.holographic {
+  background: linear-gradient(45deg, #1e40af, #0891b2, #374151, #059669);
+  background-size: 400% 400%;
+  animation: hologram 8s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Depth Layers */
+.depth-layer-1 {
+  transform: translateZ(10px);
+}
+
+.depth-layer-2 {
+  transform: translateZ(20px);
+}
+
+.depth-layer-3 {
+  transform: translateZ(30px);
+}
+
+/* Glass Morphism */
+.glass-morph {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Neon Glow Enhanced */
+.neon-glow-enhanced {
+  text-shadow: 
+    0 0 5px #0891b2,
+    0 0 10px #0891b2,
+    0 0 15px #0891b2,
+    0 0 20px #0891b2,
+    0 0 35px #0891b2,
+    0 0 40px #0891b2;
+}
+
+/* 3D Button */
+.btn-3d {
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+}
+
+.btn-3d::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(30, 64, 175, 0.8), rgba(8, 145, 178, 0.8));
+  border-radius: inherit;
+  transform: translateZ(-10px);
+  transition: all 0.3s ease;
+}
+
+.btn-3d:hover {
+  transform: perspective(1000px) rotateX(15deg) translateY(-5px);
+}
+
+.btn-3d:hover::before {
+  transform: translateZ(-15px) translateY(5px);
+}
+
+/* Floating Particles */
+.floating-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-particles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 80% 20%, rgba(8, 145, 178, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.3) 2px, transparent 2px);
+  background-size: 100px 100px, 150px 150px, 200px 200px;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Cyberpunk Grid */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(30, 64, 175, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 64, 175, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: matrix 30s linear infinite;
+}

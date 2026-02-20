@@ -1,0 +1,103 @@
+@import './styles/animations.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  perspective: 1000px;
+}
+
+.neon-glow {
+  text-shadow: 
+    0 0 5px #0891b2,
+    0 0 10px #0891b2,
+    0 0 15px #0891b2,
+    0 0 20px #0891b2;
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 10px #0891b2, 
+    inset 0 0 10px #0891b2,
+    0 0 20px rgba(8, 145, 178, 0.5),
+    0 0 40px rgba(8, 145, 178, 0.3);
+}
+
+.hover-scale {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.hover-scale:hover {
+  transform: perspective(1000px) scale(1.05) rotateX(5deg) rotateY(5deg) translateZ(10px);
+}
+
+/* Enhanced 3D Effects */
+.card-hover-3d {
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transform-style: preserve-3d;
+}
+
+.card-hover-3d:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(20px);
+  box-shadow: 
+    0 20px 40px rgba(8, 145, 178, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Modern Zoom Hover Effect - replaces 3D twist */
+.card-hover-zoom {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.card-hover-zoom:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 
+    0 20px 40px -5px rgba(0, 0, 0, 0.3), 
+    0 0 20px rgba(168, 85, 247, 0.4),
+    0 0 0 1px rgba(168, 85, 247, 0.2);
+  z-index: 10;
+}
+
+/* Holographic Text */
+.holographic-text {
+  background: linear-gradient(45deg, #1e40af, #0891b2, #374151, #059669, #0d9488);
+  background-size: 400% 400%;
+  /* Remove continuous animation for better readability and quicker visibility */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Respect users who prefer reduced motion and improve initial content visibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Glass Morphism */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating Animation */
+.float-3d {
+  animation: levitate 4s ease-in-out infinite;
+}
+
+/* Utility: ensure critical labels render crisp (fix blurry/halo text) */
+.sharp-text {
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
